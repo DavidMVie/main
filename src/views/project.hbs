@@ -1,0 +1,50 @@
+{{> header}}
+  <div class="gradient-bar"></div>
+  <div class="content">
+    <div class="main-wrapper">
+      <section class="sect-a project-page">
+        <h1>{{project.name}}</h1>
+        <img src="http://localhost:3000/project/{{project._id}}/img" alt="{{project.name}}">
+        <div id="projectCodeLinks">
+          <span id="gitHubLink">
+            <a class="btn1" href="{{project.githubLink}}">Github Repo</a>
+          </span>  
+          {{#if project.liveSiteLink}} 
+            <span id="liveSiteLink">                
+              <a href="{{project.liveSiteLink}}">View Live Site</a>
+            </span>
+          {{else}}
+            <span id="liveSiteLink">
+              <a href="#" class="disabledBtn" title="I'm working on it!">View Live Site</a>
+            </span>
+          {{/if}}
+        </div>
+      </section>
+      <section class="sect-b project-page">
+        <h2>About This Project</h2>
+        <hr class="sect-line">
+        <p>{{project.longDescription}}</p>  
+      </section>
+      <section class="project-page sect-c">
+        <div class="build-tools-wrapper">
+        <h2 class="contains-icon">Build Tools <i class="fas fa-toolbox"></i></h2>
+          <hr class="sect-line">
+          <ul class="fa-ul listTools">          
+            {{#each project.toolsArray}}
+              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="build-features-wrapper">
+          <h2 class="contains-icon">Site Features <i class="fas fa-box-open"></i></h2>
+          <hr class="sect-line">
+          <ul class="fa-ul listFeatures">
+            {{#each project.featuresArray}}
+              <li><span class="fa-li"><i class="fas fa-check-square"></i></span>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+{{>footer}}

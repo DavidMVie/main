@@ -1,0 +1,43 @@
+{{> header}}
+  <div class="gradient-bar"></div>
+  <div class="content">
+    <div class="main-wrapper">
+      <section class="sect-a contact-page">
+        <h1 class="contains-icon">Contact Me <i class="fas fa-envelope-open-text"></i></h1>
+        <p>Feel free to fill out the contact form below along with your preferred contact details and I'll get right back to you!</p>
+      </section>
+      <section class="sect-b contact-page ">
+        <form>
+          <div class="contact-name">
+            <div class="center-el">
+              <label for="name">Your Name:</label><br>
+              <input type="text" id="name" name="name" aria-required="true">  
+            </div>      
+          </div>
+          <div class="contact-email">
+            <div class="center-el">
+              <label for="email">Email</label><br>
+              <input type="email" id="email" name="email">     
+            </div>
+          </div>          
+          <div class="contact-last-name">
+            <div class="center-el">
+              <input type="text" name="last-name" id="last-name"  tabindex="-1" autocomplete="off" style="display:none">
+            </div>               
+          </div>
+          <div class="contact-message">
+            <div class="center-el">
+              <label for="message">Message</label><br>
+              <textarea name="message" id="message" cols="30" rows="10" aria-required="true"></textarea>
+            </div>
+          </div>
+          <div class="contact-button">
+            <div class="center-el">
+              <button class="btn1">Send Message</button>  
+            </div>                      
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+{{>footer}}

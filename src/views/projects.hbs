@@ -1,0 +1,31 @@
+{{> header}}
+  <div class="gradient-bar"></div>
+  <div class="content">
+    <div class="main-wrapper">
+      <section class="sect-a projects-page">
+        <h1>All Projects</h1>
+        <p>Listed projects that I've been working on:</p>
+          <ul>
+          {{#each projects}}
+            <li class="prj-thumb-list">
+              <i class="fas fa-info-circle" title="Click for more details"></i>
+              <a href="">
+                <img src="http://localhost:3000/project/{{this._id}}/img" alt="{{this.name}}">
+              </a>
+              <div class="prj-thumb-overlay">
+                <a href="/projects/{{this.id}}/project">
+                  <h2>{{this.name}}</h2>
+                  <hr />
+                  <p>{{this.shortDescription}}</p>
+                  <p><span class="using">Built With:</span> {{this.tools}}</p>
+                </a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+
+      </section>
+
+    </div>
+  </div>
+{{>footer}}

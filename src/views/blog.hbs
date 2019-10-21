@@ -1,0 +1,18 @@
+{{> header}}
+  <div class="gradient-bar"></div>
+  <div class="content">
+    <div class="main-wrapper">
+      <section class="sect-a blog-page">
+        <span>Posted: {{getDate blog.createdAt}}</span>
+        <h1>{{blog.title}}</h1>
+        {{!-- <span>{{blog.author}}</span> --}}
+        <div class="blog-content">
+          {{{ blog.htmlContent}}}  <!-- triple to avoid html being escacped -->
+        </div>
+      </section>
+      <section class="sect-b blog-page">
+
+      </section>
+    </div>
+  </div>
+{{>footer}}

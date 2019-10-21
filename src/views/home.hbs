@@ -1,0 +1,78 @@
+{{> header}}
+
+  <div class="content">
+    <div class="gradient-bar"></div> 
+    <div class="main-wrapper">
+      <section class="sect-a home-page-feature-project">
+        <h1>{{featuredProject.name}}<img src="/img/crane.png" alt="Crane Image"></h1>
+        <p>I'm currently building and breaking, and building again (aka "developing") this here site..</p>
+        <div class="featured-prj-wrapper">
+          <div class="img-featured-prj-wrapper">
+            <img class="img-featured-prj" src="http://localhost:3000/project/{{featuredProject._id}}/img" alt="{{featuredProject.name}}">    
+          </div>
+          <div class="home-page-feature-details">
+            <p>About it: {{featuredProject.shortDescription}}</p>
+            <p><span class="using">Built With:</span> {{featuredProject.tools}}</p>
+            <div class="more-info-div"><span class="btn1"><a href="/projects/{{featuredProject.id}}/project"> More Info</a></span></div>
+          </div>  
+        </div>    
+      </section>
+      <section class="sect-b home-page-projects">
+        <i class="fas fa-project-diagram"></i>
+        <h1> Other Works:</h1>
+        <p>Or have a look through some of my other work,  in various states of completion!</p>
+
+        <ul>
+          {{#each projectsList}}
+            <li class="prj-thumb-list">
+              <i class="fas fa-info-circle" title="Click for more details"></i>
+              <a href="">
+                <img src="http://localhost:3000/project/{{this._id}}/img" alt="{{this.name}}">
+              </a>
+              <div class="prj-thumb-overlay">
+                <a href="/projects/{{this.id}}/project">
+                  <h2>{{this.name}}</h2>
+                  <hr />
+                  <p>{{this.shortDescription}}</p>
+                  <p><span class="using">Built With:</span> {{this.tools}}</p>
+                </a>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+      <section class="sect-c home-page-blogs">
+        <i class="far fa-newspaper"></i>
+        <h1>Articles</h1>
+        <div id="featuredArticle">
+          <h2>Featured Article</h2>
+        </div>
+        
+        <ul>
+          {{#each blogs}}
+          <li class="blogs-thumb-list">
+            <img src="http://localhost:3000/blogs/{{this._id}}/img" alt="{{this.title}}">    
+            <div class="blogs-thumb-overlay">
+              <p class="blogs-thumb-date">Posted: {{getDate this.createdAt}}</p>
+              <div class="thumb-center">
+                <h1>{{this.title}} <hr></h1>
+                <div>
+                  <a href="/blogs/{{this._id}}">
+                    Read Article
+                  </a>
+                </div>
+              </div>              
+              <div class="blogs-thumb-tags"> 
+                {{#each tags}}       
+                <span><i class="fas fa-tags"></i>{{this}}</span>
+                {{/each}}
+              </div>   
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </section>
+
+    </div>
+  </div>
+{{>footer}}
