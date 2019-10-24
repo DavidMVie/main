@@ -16,6 +16,19 @@ app.use(express.static('public'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 
+hbs.registerHelper('whichGrid', function(toRender) {
+  switch (toRender) 
+  {
+    case 'blog': 
+    return 'gridBlogs'
+
+    case 'project': 
+    return 'gridProjects'
+
+    default:
+      return 'home'
+  }
+})
 
 app.set('views', path.join(__dirname, 'views'))
 app.use(appRouter);

@@ -19,7 +19,8 @@ router.get('/blogs', async (req, res) => {
     }
     blogs.forEach((blog) => {
        blog.thumbPic = ''  // This means an empty buffer is sent back, couldn't find the way to delete the whole things, forEach didn't work,  but doing this means the huge binary data is not sent at least.
-       // split the tags string into an array
+       // split the tags string into an arra
+       blog['type'] = 'blog'  // This is added so the helper function can tell which grid to display blogs, or projects. 
     });
     // res.send(blogs); // Test the json sent back
     res.render('blogs', {

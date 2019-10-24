@@ -87,6 +87,7 @@ router.get('/projects/list', async (req, res) => {
       let linksHTML = filterService.getLinksBar(count);
       query.forEach((item) => {
         item.screenshot = '';  // don't need to send all this binary down
+        item.type = 'project'
       })
       return res.send({
         query,
