@@ -14,21 +14,29 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
+
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 
+// hbs.registerHelper('getDate', function(jsDate){
+//   var fDate = jsDate.toDateString()
+//   return fDate;
+// });
 hbs.registerHelper('whichGrid', function(toRender) {
+
   switch (toRender) 
   {
-    case 'blog': 
+    case 'blogs': 
     return 'gridBlogs'
 
-    case 'project': 
+    case 'projects': 
     return 'gridProjects'
 
     default:
-      return 'home'
+      throw new Error('Unable to get grid')
   }
 })
+
+
 
 app.set('views', path.join(__dirname, 'views'))
 app.use(appRouter);

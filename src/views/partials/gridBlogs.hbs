@@ -1,1 +1,13 @@
-<div>{{this.title}}</div>
+<img src="http://localhost:3000/blogs/{{this._id}}/img" alt="{{this.title}}">    
+<div class="blogs-thumb-overlay">
+  <p class="blogs-thumb-date">Posted:</p>
+  <div class="thumb-center">
+    <h1>{{this.title}} <hr></h1>
+    <div><a href="/blogs/{{this._id}}">Read Article</a></div>
+  </div>              
+  <div class="blogs-thumb-tags"> 
+    {{#each tags}}       
+    <span><i class="fas fa-tags"></i></span>
+    {{/each}}
+  </div>   
+</div>

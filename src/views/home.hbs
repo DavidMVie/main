@@ -21,54 +21,13 @@
         <i class="fas fa-project-diagram"></i>
         <h1 class="section-title"> Other Works:</h1>
         <p>Or have a look through some of my other work,  in various states of completion!</p>
-
-        <ul>
-          {{#each projectsList}}
-            <li class="prj-thumb-list">
-              <i class="fas fa-info-circle" title="Click for more details"></i>
-              <a href="">
-                <img src="http://localhost:3000/project/{{this._id}}/img" alt="{{this.name}}">
-              </a>
-              <div class="prj-thumb-overlay">
-                <a href="/projects/{{this.id}}/project">
-                  <h2>{{this.name}}</h2>
-                  <hr />
-                  <p>{{this.shortDescription}}</p>
-                  <p><span class="using">Built With:</span> {{this.tools}}</p>
-                </a>
-              </div>
-            </li>
-          {{/each}}
-        </ul>
+        {{> thumbGrid type='projects' cont=projects}}
       </section>
       <section class="sect-c home-page-blogs">
         <i class="far fa-newspaper"></i>
         <h1 class="section-title">Articles</h1>        
-        <ul>
-          {{#each blogs}}
-          <li class="blogs-thumb-list">
-            <img src="http://localhost:3000/blogs/{{this._id}}/img" alt="{{this.title}}">    
-            <div class="blogs-thumb-overlay">
-              <p class="blogs-thumb-date">Posted: {{getDate this.createdAt}}</p>
-              <div class="thumb-center">
-                <h1>{{this.title}} <hr></h1>
-                <div>
-                  <a href="/blogs/{{this._id}}">
-                    Read Article
-                  </a>
-                </div>
-              </div>              
-              <div class="blogs-thumb-tags"> 
-                {{#each tags}}       
-                <span><i class="fas fa-tags"></i>{{this}}</span>
-                {{/each}}
-              </div>   
-            </div>
-          </li>
-          {{/each}}
-        </ul>
+        {{> thumbGrid type='blogs' cont = blogs}}
       </section>
-
     </div>
   </div>
 {{>footer}}

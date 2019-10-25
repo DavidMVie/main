@@ -14,6 +14,10 @@ router.get('/projects', async (req, res) => {
     const count = await Project.countDocuments();
     const linksHTML = filterService.getLinksBar(count);
 
+    projects.forEach((project) => {
+      project.type = "project"  // This is to help the handlebars file know it's the gridProject.hbs to serve rather than gridBlog.hbs
+    })
+
     res.render('projects', {
       projects,
       count,
@@ -89,6 +93,7 @@ router.get('/projects/list', async (req, res) => {
         item.screenshot = '';  // don't need to send all this binary down
         item.type = 'project'
       })
+      console.log('QUERRRRY ', query)
       return res.send({
         query,
         count,
@@ -107,14 +112,14 @@ router.get('/projects/list', async (req, res) => {
       let count = await Project.countDocuments({progress: 100})
 
       let linksHTML = filterService.getLinksBar(count);
-      console.log('QUUUUUEEEEERRRRRYYYY', query)
 
       query.forEach((item) => {
-        item.screenshot = '';  // don't need to send all this binary down
+        item.screenshot = '';  // don't need to send all the binary down
+        item.type = 'project'
       })
 
       return res.send({
-        query,
+        data: query,
         count,
         linksHTML
       });
@@ -134,9 +139,10 @@ router.get('/projects/list', async (req, res) => {
 
       query.forEach((item) => {
         item.screenshot = '';  // don't need to send all this binary down
+        item.type = 'project'
       })
       return res.send({
-        query,
+        data: query,
         count,
         linksHTML
       });
