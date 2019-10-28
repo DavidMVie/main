@@ -107,13 +107,15 @@ const gridService = (() => {
         registerThumbOverlay(projectThumbs)
   
     } else if (type === 'blogs') {
+  
       json.forEach((query) => {
+        query.date = new Date(query.createdAt).toDateString()
         htmlString += 
         `
         <li>
           <img src="http://localhost:3000/blogs/${query._id}/img" alt="${query.title}">    
           <div class="blogs-thumb-overlay">
-            <p class="blogs-thumb-date">Posted: {{getDate this.createdAt}}</p>
+            <p class="blogs-thumb-date">Posted: ${query.date}</p>
             <div class="thumb-center">
               <h1>${query.title} <hr></h1>
               <div><a href="/blogs/${query._id}">Read Article</a></div>
@@ -121,7 +123,7 @@ const gridService = (() => {
             <div class="blogs-thumb-tags"> 
         `
         query.tags.forEach((tag) => {
-          htmlString += `<span><i class="fas fa-tags"></i>${tag}</span>`
+          htmlString += `<span><i class="fas fa-tags"></i>${tag.tag}</span>`
         })
 
         htmlString += `
