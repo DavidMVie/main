@@ -1,0 +1,8 @@
+  <ul class="grid-service" data-type={{cont.[0].type}}>
+    {{#each cont}}
+    <li> 
+        {{> (whichGrid this.type) }}        
+    </li>
+    {{/each}}
+  </ul>
+ 

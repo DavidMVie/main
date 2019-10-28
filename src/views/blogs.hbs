@@ -3,15 +3,31 @@
   <div class="content">
     <div class="main-wrapper">
       <section class="sect-a blogs-page">
-          {{> thumbGrid }}
-      </section>
-      <section class="sect-b blogs-page ">
-
+        <div class="select-filters blogs-filters">
+          Showing <select class="select-css" name="showStatus" id="showStatus" data-type="blogs" >
+            <option value="all">All</option>
+            <option value="theWeb">The Web</option>
+            <option value="javascript">Javascript</option>
+            <option value="nodejs">NodeJS</option>
+            <option value="css">CSS</option>
+            <option value="es6">ES6</option>
+            <option value="angular">Angular</option>
+            <option value="general">General</option>          
+            </select>
+          entries with the 
+          <select class="select-css" name="sortBy" id="sortBy">
+            <option value="desc">Latest Top</option>
+            <option value="asc">Oldest Top</option>
+          </select>          
+        </div>
+        {{> pagination }}
+        {{> gridService cont=blogs}}
       </section>
     </div>
   </div>
 {{>footer}}
   <script src="/js/app.js"></script>
   <script src="/js/funky.js"></script>
+  <script src="/js/gridService.js"></script>
 </body>
 </html>

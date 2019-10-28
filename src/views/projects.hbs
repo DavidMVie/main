@@ -5,8 +5,8 @@
       <section class="sect-a projects-page">
         <h1>All Projects</h1>
         <p>Listed projects that I've been working on:</p>
-        <div class="project-filters">
-          Showing <select class="select-css" name="showStatus" id="showStatus">
+        <div class="select-filters projects-filters">
+          Showing <select class="select-css" name="showStatus" id="showStatus" data-type="projects">
             <option value="all">All</option>
             <option value="incomplete">Incomplete</option>
             <option value="completed">Completed</option>
@@ -17,11 +17,8 @@
             <option value="asc">Oldest Top</option>
           </select>
         </div>
-        <div class="links-bar">
-          <span>Results: {{count}}</span>
-          <ul>Pages: {{{linksHTML}}} </ul>
-        </div>
-        {{> thumbGrid }}
+        {{> pagination }}
+        {{> gridService cont=projects}} 
       </section>
 
     </div>
@@ -30,5 +27,6 @@
 {{>footer}}
   <script src="/js/app.js"></script>
   <script src="/js/funky.js"></script>
+  <script src="/js/gridService.js"></script>
 </body>
 </html>

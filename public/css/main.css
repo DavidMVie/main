@@ -254,13 +254,16 @@ hr.sect-line {
 
 
 
-/* HOME PAGE & PROJECTS PAGE SECTION
-=====================================*/
+/* ==== HOME PAGE & PROJECTS PAGE SECTION ====
+============================================== */
 
 .content > .main-wrapper {
   min-height: 900px
 }
 
+
+
+/* FEATURE PROJECT*/
 .sect-a.home-page-feature-project  div.more-info-div{
   text-align: center;
   padding: 20px;
@@ -304,163 +307,11 @@ section.sect-c.home-page-blogs h1.section-title {
   padding: 15px;
 }
 
-section.home-page-projects ul,
-section.home-page-blogs ul,
-section.projects-page ul,
-section.blogs-page ul {
-  padding: 0;
-  margin: 0;
-}
 
 
 
-
-section.home-page-projects ul li,
-section.home-page-blogs ul li,
-section.projects-page ul#projectsList li,
-section.blogs-page ul li {
-  list-style:none;
-  position: relative;
-  margin: 20px auto 0;
-  min-width: 200px;
-  max-width: 500px
-}
-
-
-
-section.home-page-projects ul li img,
-section.home-page-blogs ul li img,
-section.projects-page ul li img,
-section.blogs-page ul li img {
-  width: 100%;
-  height: 100%;
-  box-shadow: 1px 3px 14px rgba(0,0,0, .2)
-}
-
-section.home-page-projects ul li i.fa-info-circle,
-section.projects-page ul li i.fa-info-circle,
-section.blogs-page ul li i.fa-info-circle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 1.5rem;
-  color: rgb(218, 216, 216);
-  cursor: pointer;
-  opacity: .8;
-}
-
-section.home-page-projects ul .prj-thumb-overlay,
-section.projects-page ul .prj-thumb-overlay {
-  position: absolute;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: rgba(118,6,55);
-  display: none;
-  opacity: .85;
-  top: 0;
-  cursor: pointer;
-}
-
-section.home-page-projects ul .prj-thumb-overlay a,
-section.projects-page ul .prj-thumb-overlay a {
-  height: 100%;
-  text-decoration: none;
-  color: rgb(235, 231, 231);
-  z-index: 4;
-  display: block;
-  background: rgba(118,6,55, .85);
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.prj-thumb-overlay h2,
-.prj-thumb-overlay p {
-  text-align: center;
-  color: white;
-}
-
-.prj-thumb-overlay h2 {
-  padding-top: 15px;
-}
-
-.prj-thumb-overlay hr {
-  border: none;
-  height: 2px;
-  background: rgb(88, 5, 41);
-  width: 50%;
-
-}
-
-.prj-thumb-overlay p span.using {
-  font-size: .7em;
-} 
-
-.prj-thumb-overlay p:last-child {
-  color: rgb(180, 180, 180);
-}
-
-
-
-
-/* ALL PROJECTS PAGE
-===================== */
-
-div.project-filters {
-  font-size: .6em;
-  text-align: center;
-}
-
-div.links-bar {
-  text-align: center;
-  margin: 40px 0 10px;
-  font-size: .8em;
-  display:flex;
-  justify-content: space-between;
-  /* rgba(136, 71, 71, 0.2) */
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#884747+0,ffffff+100 */
-  background: rgba(136, 71, 71, 0.2); /* Old browsers */
-  background: -moz-linear-gradient(left,  #F7F6F5 0%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #F7F6F5 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #F7F6F5 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7F6F5', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
-  align-items: center;
-
-  box-shadow: 0px 1px 5px rgba(0,0,0, .1);
-  padding: 10px;
-  border-radius: 10px;
-}
-
-div.links-bar ul {
-  display: flex;
-}
-
-div.links-bar ul li {
-  padding: 2px 4px;
-  /* background: #65297A; */
-  border: 1px solid black;
-  border-radius: 2px;
-  color: rgb(158, 158, 158);
-  list-style: none;
-  margin-left: 5px;
-  cursor: pointer;
-  background: rgba(113,78,95, .95);
-}
-
-div.links-bar ul li.current {
-  color: #FFF;
-  box-shadow: inset 1px 1px 10px rgba(0,0,0, .8)
-
-}
-
-div.links-bar ul li:active {
-  color: #FFF;
-  box-shadow: inset 2px 2px 6px rgba(0,0,0, .8);
-}
-/*
- INDIVIDUAL PROJECT PAGE
- ======================== */
+/* ==== INDIVIDUAL PROJECT PAGE ====
+ ================================= */
 
 .sect-a.project-page h1 {
   margin-bottom: 20px;
@@ -502,136 +353,9 @@ div.links-bar ul li:active {
 }
 
 
-/* home page blogs section */
-section.home-page-blogs div.thumb-center h1 {
-  font-size: 1.3em;
-  color: rgb(49, 49, 49);
-}
 
-/* BLOGS MAIN PAGE - LISTING ALL ARTICLES 
-========================================== */
-
-section.blogs-page ul .blogs-thumb-overlay,
-section.home-page-blogs ul .blogs-thumb-overlay
-{
-  position: absolute;
-  padding: 20px 20px 2px 20px;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  top: 0;
-  color: black;
-  background: radial-gradient( circle, rgba(255, 255, 255, 0.75) 30%, rgba(255, 255, 255, .85) 50%, rgba(255, 255, 255, 1) 75%);
-  display: flex;
-  flex-direction: column; 
-}	
-
-section.blogs-page ul .blogs-thumb-overlay .blogs-thumb-date,
-section.home-page-blogs ul .blogs-thumb-overlay .blogs-thumb-date {
-  font-size: .65em;
-  margin-top: 0;
-  margin-bottom: 25px;
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.thumb-center,
-section.home-page-blogs ul .blogs-thumb-overlay div.thumb-center {
-  flex-grow: 1;
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.thumb-center h1,
-section.home-page-blogs ul .blogs-thumb-overlay div.thumb-center h1{
-  position: relative;
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.thumb-center > div,
-section.home-page-blogs ul .blogs-thumb-overlay div.thumb-center > div {
-  text-align: center;
-  margin-top: 40px;
-}
-
-section.blogs-page ul .blogs-thumb-overlay div a,
-section.home-page-blogs ul .blogs-thumb-overlay div a {
-  text-decoration: none;
-  color: rgb(54, 51, 51);
-  font-weight: bolder;
-  transition: color .2s ease, border 1s ease;
-  border-top: none;
-  border-bottom: none;
-  border-right: 1px solid gray;
-  border-left: 1px solid gray;
-  /* border-right: 1px solid #C80177;
-  border-left: 1px solid #C80177; */
-  padding: 1px 5px;
-  border-radius: 10px;
-}
-
-section.blogs-page ul .blogs-thumb-overlay a:hover,
-section.home-page-blogs ul .blogs-thumb-overlay a:hover
- {
- color:#C80177;
- border-right: 1px solid #C80177;
- border-left: 1px solid #C80177;
-}
-
-section.blogs-page ul .blogs-thumb-overlay a:active,
-section.home-page-blogs ul .blogs-thumb-overlay a:active {
-  box-shadow: inset 1px 0px 3px 0px rgba(0,0,0,.7);
-}
-
-section.blogs-page ul .blogs-thumb-overlay hr,
-section.home-page-blogs ul .blogs-thumb-overlay hr {
-  border: none;
-  width: 50%;
-  margin: 0 auto;
-  height: 1px;
-  background: rgba(136,136,163,1);
-  background: -moz-linear-gradient(left, rgba(136,136,163,1) 0%, rgba(14,11,194,1) 7%, rgba(222,0,170,1) 14%, rgba(59,162,199,1) 19%, rgba(98,125,77,1) 33%, rgba(125,77,106,1) 48%, rgba(95,22,120,1) 60%, rgba(113,77,125,1) 77%, rgba(224,0,138,1) 85%, rgba(92,7,35,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(136,136,163,1)), color-stop(7%, rgba(14,11,194,1)), color-stop(14%, rgba(222,0,170,1)), color-stop(19%, rgba(59,162,199,1)), color-stop(33%, rgba(98,125,77,1)), color-stop(48%, rgba(125,77,106,1)), color-stop(60%, rgba(95,22,120,1)), color-stop(77%, rgba(113,77,125,1)), color-stop(85%, rgba(224,0,138,1)), color-stop(100%, rgba(92,7,35,1)));
-  background: -webkit-linear-gradient(left, rgba(136,136,163,1) 0%, rgba(14,11,194,1) 7%, rgba(222,0,170,1) 14%, rgba(59,162,199,1) 19%, rgba(98,125,77,1) 33%, rgba(125,77,106,1) 48%, rgba(95,22,120,1) 60%, rgba(113,77,125,1) 77%, rgba(224,0,138,1) 85%, rgba(92,7,35,1) 100%);
-  background: -o-linear-gradient(left, rgba(136,136,163,1) 0%, rgba(14,11,194,1) 7%, rgba(222,0,170,1) 14%, rgba(59,162,199,1) 19%, rgba(98,125,77,1) 33%, rgba(125,77,106,1) 48%, rgba(95,22,120,1) 60%, rgba(113,77,125,1) 77%, rgba(224,0,138,1) 85%, rgba(92,7,35,1) 100%);
-  background: -ms-linear-gradient(left, rgba(136,136,163,1) 0%, rgba(14,11,194,1) 7%, rgba(222,0,170,1) 14%, rgba(59,162,199,1) 19%, rgba(98,125,77,1) 33%, rgba(125,77,106,1) 48%, rgba(95,22,120,1) 60%, rgba(113,77,125,1) 77%, rgba(224,0,138,1) 85%, rgba(92,7,35,1) 100%);
-  background: linear-gradient(to right, rgba(136,136,163,1) 0%, rgba(14,11,194,1) 7%, rgba(222,0,170,1) 14%, rgba(59,162,199,1) 19%, rgb(61, 80, 46) 33%, rgba(125,77,106,1) 48%, rgba(95,22,120,1) 60%, rgba(113,77,125,1) 77%, rgba(224,0,138,1) 85%, rgba(92,7,35,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8888a3', endColorstr='#5c0723', GradientType=1 );
-  position: absolute;
-  bottom: -7px;
-  left: 25%;
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.blogs-thumb-tags,
-section.home-page-blogs .blogs-thumb-overlay div.blogs-thumb-tags {
-  margin-bottom: 10px
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.blogs-thumb-tags span,
-section.home-page-blogs ul .blogs-thumb-overlay div.blogs-thumb-tags span{
-  border: 1.5px solid rgb(141, 141, 141);
-  border-radius: 10px;
-  padding: 4px 8px;
-  font-size: .6em;
-  cursor: pointer;
-  transition: background .2s ease-in-out, color .2s ease-in-out
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.blogs-thumb-tags span:active,
-section.home-page-blogs ul .blogs-thumb-overlay div.blogs-thumb-tags span:active
- {
-  box-shadow: inset 2px 0px 3px 0px rgba(0,0,0,.7);
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.blogs-thumb-tags span i,
-section.home-page-blogs ul .blogs-thumb-overlay div.blogs-thumb-tags span i {
-  margin-right: 5px;
-  color: rgb(75, 75, 75);
-}
-
-section.blogs-page ul .blogs-thumb-overlay div.blogs-thumb-tags span:hover i,
-section.home-page-blogs ul .blogs-thumb-overlay div.blogs-thumb-tags span:hover i {
-  color: #C80177;
-}
-
-
-/* BLOG PAGE - INDIVIDUAL BLOG */
+/* ==== BLOG PAGE - INDIVIDUAL BLOG ====
+   ===================================== */
 .sect-a.blog-page span:first-child{  /* The Posted Date */
   font-size: .7em;
   position: relative;
@@ -737,10 +461,6 @@ section.home-page-blogs ul .blogs-thumb-overlay div.blogs-thumb-tags span:hover 
 
 
 
-
-
-
-
 footer p {
   text-align: center;
 }
@@ -758,8 +478,9 @@ footer div.crane-kudos a{
 
 
 
-/* FONT AWESOME GENERAL STYLINGS 
-================================= */
+/* ====================================
+==== FONT AWESOME GENERAL STYLINGS ====
+======================================= */
 
 /* TICKBOXES ARE GREEN */
 .fas.fa-check-square {
@@ -796,50 +517,10 @@ h1.contains-icon{
 }
 
 
+/* =========================
+   ===== MEDIA QUERIES =====
+   ========================= */
 
-
-
-/* MEDIA QUERIES
-================= */
-
-/* Extra small devices (phones, 600px and down)
-@media only screen and (max-width: 600px) {...} */
-
-/* Small devices (portrait tablets and large phones, 600px and up)
-@media only screen and (min-width: 600px) {...} */
-
-/* Medium devices (landscape tablets, 768px and up)
-@media only screen and (min-width: 768px) {...} */
-
-/* Large devices (laptops/desktops, 992px and up)
-@media only screen and (min-width: 992px) {...} */
-
-/* Extra large devices (large laptops and desktops, 1200px and up)
-@media only screen and (min-width: 1200px) {...} */
-
-@media (min-width: 500px) {
-  div.project-filters {
-    font-size: .8em;
-    text-align: center;
-  }
-  
-}
-
-@media (min-width: 550px) and (max-width: 800px){
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a {
-    padding-top: 15px;
-  }
-
-  section.blogs-page ul .blogs-thumb-overlay .blogs-thumb-date, section.home-page-blogs ul .blogs-thumb-overlay .blogs-thumb-date {
-    margin-bottom: 60px
-  }
-
-  .sect-c.home-page-blogs div.blogs-thumb-overlay div.thumb-center {
-    font-size: 1.1em ;
-  }
-
-}
 
 @media (min-width: 700px) {
   .menu-side-bar {
@@ -865,47 +546,10 @@ h1.contains-icon{
      font-size: 1.1em;
    }
 
-   section.home-page-blogs ul li {
-    max-width: 332px;
-    max-height: 226px
-  }
-
-
-   /* Thumb Grids */
-  .sect-b.home-page-projects ul,
-  .sect-c.home-page-blogs ul,
-  .sect-a.projects-page ul#projectsList,
-  .sect-a.blogs-page ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-
-  .sect-b.home-page-projects ul li,
-  .sect-c.home-page-blogs ul li,
-  .sect-a.projects-page ul#projectsList li,
-  .sect-a.blogs-page ul li {
-    width: 40vw
-  }
-
-  h2 i.fas.fa-toolbox {
+   h2 i.fas.fa-toolbox {
     margin-right: -125px;
   }
 
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a {
-    font-size:.8em;
-  }
-
-  
-  .sect-a.blogs-page .blogs-thumb-overlay {
-    font-size: .8em;
-  }
-
-  section.home-page-blogs ul .blogs-thumb-overlay div.thumb-center > div {
-     margin-top: 25px; /* cancels off the original 40px margin*/
-  }
 
   /* The Project Page */  
   
@@ -924,21 +568,13 @@ h1.contains-icon{
 }
 
 @media (min-width: 900px) {
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a {
-    padding-top: 15px;
-  }
+
   .sect-a.home-page-feature-project .featured-prj-wrapper {
     flex-direction: row;
     margin-top: 50px
   }
   .home-page-feature-details {
     padding: 0 15px
-  }
-
-  section.blogs-page ul .blogs-thumb-overlay .blogs-thumb-date,
-  section.home-page-blogs ul .blogs-thumb-overlay .blogs-thumb-date {
-    margin-bottom: 40px
   }
 }
 
@@ -952,114 +588,10 @@ h1.contains-icon{
     width: 100px;
   }
 
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a {
-    font-size: .9em;
-    padding-top: 0;
-  }
-
-  section.blogs-page ul .blogs-thumb-overlay .blogs-thumb-date,
-  section.home-page-blogs ul .blogs-thumb-overlay .blogs-thumb-date {
-    margin-bottom: 30px;
-    font-size: .8em
-  }
-
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a {
-    padding-top: 10px;
-  }
-
-  .sect-c.home-page-blogs div.blogs-thumb-overlay div.thumb-center {
-    font-size: .8em ;
-  }
-
-
 }
-
-@media (min-width: 1100px) {
-
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a {
-    padding-top: 15px;
-  }
-}
-
-@media (min-width: 1140px) {
-
-  /* ON THE HOME PAGE */
-  section.home-page-blogs ul .blogs-thumb-overlay .blogs-thumb-date {
-    margin-bottom: 30px;
-    font-size: .6em;
-  }
-
-  /* ON THE BLOGS PAGE */
-  section.blogs-page ul .blogs-thumb-overlay .blogs-thumb-date{
-    margin-bottom: 60px;
-  }
-
-}
-
 
 @media (min-width: 1250px) {
   body {
     font-size: 1.3em
   }
-
-  .sect-b.home-page-projects ul li {
-    width: 27vw;
-  }
-  section.home-page-projects ul .prj-thumb-overlay a,
-  section.projects-page ul .prj-thumb-overlay a  {
-    padding-top: 0;
-    font-size: .7em
-  }
-}
-
-
-
-
-/* text-decoration: none;
-padding: 10px;
-
-color: white;
-border-radius: 6px;
-transition: background .5s ease;
-cursor: pointer; */
-
-.select-css {
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.4;
-  padding: .6em 1.4em .5em .8em;
-  margin: 0;
-  border: 1px solid #aaa;
-  box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-  border-radius: .5em;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #FFF;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
-    linear-gradient(to bottom, #A5035C 0%,#6C0630 100%);
-  background-repeat: no-repeat, repeat;
-  background-position: right .7em top 50%, 0 0;
-  background-size: .65em auto, 100%;
-}
-.select-css::-ms-expand {
-  display: none;
-}
-.select-css:hover {
-  border-color: #888;
-}
-.select-css:focus {
-  border-color: #aaa;
-  box-shadow: 0 0 1px 1px rgba(59, 153, 252, .7);
-  box-shadow: 0 0 0 1px -moz-mac-focusring;
-  color: rgba(59, 153, 252, 1);
-  outline: none;
-}
-.select-css option {
-  font-weight:normal;
 }

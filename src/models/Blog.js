@@ -16,10 +16,13 @@ const blogSchema =  new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Admin'
   },
-  tags: {
-    type: Array,
-    trim: true
-  },
+  tags: [{
+    tag: {
+      type: String,
+      required: true,
+      trim: true
+    }
+  }],
   thumbPic: {
     type: Buffer
   },

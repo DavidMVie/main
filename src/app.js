@@ -8,6 +8,7 @@ const adminRouter = require('./routers/adminRouter');
 const projectRouter = require('./routers/projectRouter');
 const blogRouter = require('./routers/blogRouter');
 const contactRouter = require('./routers/contactRouter');
+const gridServiceRouter = require('./routers/gridServiceRouter');
 
 const app = express(); 
 app.use(express.json());
@@ -17,10 +18,11 @@ app.set('view engine', 'hbs');
 
 hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 
-// hbs.registerHelper('getDate', function(jsDate){
-//   var fDate = jsDate.toDateString()
-//   return fDate;
-// });
+hbs.registerHelper('getDate', function(jsDate){
+  var fDate = jsDate.toDateString()
+  return fDate;
+});
+
 hbs.registerHelper('whichGrid', function(toRender) {
 
   switch (toRender) 
@@ -44,6 +46,7 @@ app.use(adminRouter);
 app.use(projectRouter);
 app.use(blogRouter);
 app.use(contactRouter);
+app.use(gridServiceRouter);
 
 const port = process.env.PORT || 3000;
 
