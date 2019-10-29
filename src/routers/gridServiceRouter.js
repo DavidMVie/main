@@ -17,7 +17,7 @@ router.get('/gridService', async (req, res) => {
       // Pagination
    if(req.query.pg) {
      let pageNumber = req.query.pg * 1 //convert to number;
-     skip = (pageNumber - 1) * 4;
+     skip = (pageNumber - 1) * 4;  // formula for implementing pagination - assuming 4 results per page hardcoded.
    }
 
    // Hard coded to createdAt, so for now can only sort on that field. 
@@ -40,7 +40,6 @@ router.get('/gridService', async (req, res) => {
         query.forEach((project) => {
           project.screenshot = '';  // don't need to send all this binary down
         })
-
         
         return res.send({
           query,
@@ -74,7 +73,6 @@ router.get('/gridService', async (req, res) => {
 
 
    } else if(req.query.show === 'Completed') {
-     console.log('SKIP ', skip, 'completed running');
      let query = await Project.find({})
        .where('progress')
        .equals(100)
@@ -88,7 +86,6 @@ router.get('/gridService', async (req, res) => {
 
      query.forEach((project) => {
       project.screenshot = '';  // don't need to send all the binary down
-      // project.type = 'projects'
      })
 
      return res.send({
@@ -99,7 +96,6 @@ router.get('/gridService', async (req, res) => {
      });
 
    }else if(req.query.show === 'Incomplete') {
-     console.log('SKIP ', skip, 'incomplete running')
      let query = await Project.find({})
        .where('progress')
        .lt(100)
@@ -122,9 +118,6 @@ router.get('/gridService', async (req, res) => {
        type
      });
    }else{
-     console.log('the other one!')
-      console.log('the req.query.show', req.query.show)
-     
      let query = await Blog.find({'tags.tag': req.query.show})
      .limit(4)
      .sort(sortBy)
@@ -137,17 +130,14 @@ router.get('/gridService', async (req, res) => {
      blog.thumbPic = '';  // don't need to send all this binary down
      blog.createdAt =  blog.createdAt.toDateString()
     })
-    console.log('queeeeeeree ', query)
+
     return res.send({
       query,
       count,
       linksHTML,
       type
     });
-  }
-
-
-   
+  }   
 
  } catch (e) {
    res.status(400).send(e.message)

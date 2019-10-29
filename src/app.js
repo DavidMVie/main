@@ -48,8 +48,7 @@ app.use(blogRouter);
 app.use(contactRouter);
 app.use(gridServiceRouter);
 
-const port = process.env.PORT || 3000;
-
+const port = process.env.PORT;
 app.listen(port,  () => {
   console.log('Ole cloth ears is listening on port ' + port)
 })

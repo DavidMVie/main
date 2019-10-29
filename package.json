@@ -2,15 +2,16 @@
   "name": "portfolioSite",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js -e js,hbs "
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
@@ -23,6 +24,7 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
+    "env-cmd": "^10.0.1",
     "nodemon": "^1.19.3"
   }
 }

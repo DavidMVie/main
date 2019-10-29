@@ -1,26 +1,44 @@
-  /* HOME PAGE NEEDS GRID SYSTEM FOR LAYOUT OF THUMBS,  AS DOES PROJECTS PAGE FOR PROJECT THUMBS AND BLOGS PAGE FOR ITS LIST OF ALL BLOGS.  THE GRIDSERVICE PROVIDES A WAY TO CENTRALIZE THIS CODE AND ITS STYLES 
-    IT INCLUDES VIEW TEMPLATE GRIDSERVICE.HBS,  ALONG WITH TWO SUB TEMPLATE PARTIALS - GRIDBLOGS.HBS / GRIDPROJECTS.HBS
-    GRIDSERVICE.CSS PROVIDES ALL THE UL'S STYLINGS,  
-    GRIDSERVICE.JS PROVIDES ALL THE JS FUNCTIONALITY FOR INTERACTING WITH ELEMENTS OF THE UL.
-    WHICHGRID IS A HELPER FUNCTION ADDED TO APP.JS AND USED TO TAKE A STRING, "PROJECTS" OR "BLOGS",  AND THEN RETURN THE CORRECT PARTIAL, BE THAT GRIDBLOGS.HBS OR GRIDPROJECTS.HBS.
+  /*
+      THE GRID SERVICE IS A LAYOUT SYSTEM FOR THE SITES  DISPLAY OF PROJECTS AND BLOGS LISTINGS.  THEY ARE UL LI'S.  BOTH BLOGS AND PROJECTS "THUMBS" ARE LISTED ON THE HOME PAGE AND EACH HAVE THEIR OWN PROJECTS.HBS AND BLOGS.HBS. PAGES. THOSE PAGES EMPLOY PAGINATION AND FILTERING/SORTING FUNCTIONALITY. GRIDSERVICE CENTRALISES THE CODE AND STYLES TO ACHIEVE THIS. 
+
+      GRIDSERVICE.HBS - SERVER SIDE VIEW WITH TWO SUB PARTIALS,  GRIDBLOGS.HBS AND GRIDPROJECTS.HBS
+      GRIDSERVICE.CSS - STYLES FOR ABOVE TEMPLATES 
+      GRIDSERVICE.JS - CLIENT SIDE: PROVIDES ALL FUNCTIONALITY FOR INTERACTING WITH THE ELEMENTS WITHIN THE SERVICE UL
+      WHICHGRID  - HELPER FUNCTION ON APP.JS WHICH APPLIES LOGIC TO DETERMINE WHETHER THE UL SHOULD DISPAY PROJECTS LISTS OR BLOGS LISTS 
+      GRIDSERVICE.JS -SERVICE FOLDER, SERVERSIDE - ALLOWS SERVER SIDE UTILITY FILE
   */
+  
  
 const gridService = (() => { 
-  // Establish if we're deaing with a 'blogs' or 'projects' service request. 
+  // Establish if we're deaing with a 'blogs' or 'projects'
   const type = document.querySelector('ul.grid-service').dataset.type;
-  /* =============
-  PROJECT GRID THUMBS ON MOUSEENTER SHOW OVELAY OF DETAILS ABOUT PROJECT, REGISTER THE EVENT HANDLER: 
-
-  @PARAM:   el     array of HTMLElementObjects       The list istem to add the handler to
-  ================ */
 
   if(type === 'projects') {
-    // Get an array like obj back with all list items to apply overlay event hander to
+
+    // Get all ul.grid-service list items (thumbs) on the page..  if it's the home page bear in mind that this will include blogs list items as well as projects list items..
     const projectThumbs = document.querySelectorAll('ul.grid-service li')
-    // Pass that array to a function that will loop over each item and add both mouseenter and leave events.
-    registerThumbOverlay(projectThumbs) ;
+
+    // Establish if it's the projects on the home page display or the projects page display
+    if(document.querySelector('.content').dataset.page === "home") {
+
+      // If we're  on the home page needs to filter out the blogs thumbs as they don't have mouseover overlays
+      const thumbsArray = [...projectThumbs];   // convert to real js array for use of filter();
+      const filteredThumbsArray = thumbsArray.filter((el) => {
+        return el.parentElement.dataset.type === 'projects'
+      });
+      registerThumbOverlay(filteredThumbsArray)
+    }else {
+      // if you're on the projects page don't need to worry about filtering out any blogs thumbs so just go ahead and pass in the array of thumbs as is 
+      registerThumbOverlay(projectThumbs)
+    }
   }
 
+  /* =============
+    PROJECT GRID THUMBS ON MOUSEENTER SHOW OVERLAY OF DETAILS ABOUT PROJECT, REGISTER THE EVENT HANDLER HERE: 
+
+   @PARAM:   el     array of HTMLElementObjects       The list istem to add the handler to
+  ================ */
+    // Takes array of list-items and applies mouseenter and mouseleave events as shown below.
   function registerThumbOverlay (el) {
     el.forEach( (thumb) => {
       thumb.addEventListener('mouseenter', (e) => {
@@ -32,6 +50,8 @@ const gridService = (() => {
       });
     });
   }
+
+
 
   /* PAGINATION LINKS ABOVE GRID
   =============================== */
@@ -173,7 +193,6 @@ const gridService = (() => {
 
     const xhr = new XMLHttpRequest();
     xhr.onload = function() {
-      console.log(xhr.responseText) // filters/sorted/paginated data returned
       // Now need to re-render the container which is a manual task I think
       const result = JSON.parse(xhr.responseText);
       // function call to build the html

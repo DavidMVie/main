@@ -111,8 +111,9 @@ ul.grid-service .blogs-thumb-overlay div.thumb-center {
 
 ul.grid-service .blogs-thumb-overlay div.thumb-center h1 {
   position: relative;
-  /* font-size: 1.3em;
-  color: rgb(49, 49, 49); */
+  font-size: 1.3em;
+  margin-top: 10px;
+  color: rgb(49, 49, 49);
 }
 
 ul.grid-service .blogs-thumb-overlay div.thumb-center > div {
@@ -380,9 +381,12 @@ ul.grid-service .blogs-thumb-overlay div.blogs-thumb-tags span:hover i {
   ul.grid-service .prj-thumb-overlay a {
     padding-top: 10px;
   }
-
+  
   .sect-c.home-page-blogs div.blogs-thumb-overlay div.thumb-center {
     font-size: .8em ;
+  }
+  ul.grid-service .blogs-thumb-overlay div.thumb-center h1 {
+    font-size: 1.5em;
   }
 }
 
@@ -416,6 +420,10 @@ ul.grid-service .blogs-thumb-overlay div.blogs-thumb-tags span:hover i {
   ul.grid-service .prj-thumb-overlay a {
     padding-top: 0;
     font-size: .7em
+  }
+
+  ul.grid-service .blogs-thumb-overlay div.thumb-center h1 {
+    margin-top: 0;
   }
 }
 
