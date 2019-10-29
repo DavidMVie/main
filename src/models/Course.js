@@ -30,4 +30,4 @@ const courseSchema = new mongoose.Schema({
   timestamps: true
 })
 
-// The builtFromCourse should have a link to the project page so people can link to that 
+

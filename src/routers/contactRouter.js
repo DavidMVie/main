@@ -2,6 +2,7 @@ const express = require('express');
 const { check, validationResult } = require('express-validator');
 
 const Contact = require('../models/Contact');
+const { emailContactReceivedClient, emailContactReceivedMe } = require('../emails/account')
 
 const router = new express.Router();
 
@@ -53,6 +54,8 @@ try {
   })
 
   await contact.save();
+  emailContactReceivedClient(name, email)
+  emailContactReceivedMe(name, email, message, contact._id)
   res.status(201).send({msg: 'Thanks for contacting me, i\'ll get back to you soon.'})
 } catch (e) {
   res.status(400).send(e.message);
