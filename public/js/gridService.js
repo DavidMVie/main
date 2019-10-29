@@ -107,7 +107,7 @@ const gridService = (() => {
         <li>
           <i class="fas fa-info-circle" title="Click for more details"></i>
           <a href="">
-            <img src="http://localhost:3000/projects/${query._id}/img" alt="${query.name}">
+            <img src="/projects/${query._id}/img" alt="${query.name}">
           </a>
           <div class="prj-thumb-overlay">
             <a href="/projects/${query._id}/project">
@@ -133,7 +133,7 @@ const gridService = (() => {
         htmlString += 
         `
         <li>
-          <img src="http://localhost:3000/blogs/${query._id}/img" alt="${query.title}">    
+          <img src="/blogs/${query._id}/img" alt="${query.title}">    
           <div class="blogs-thumb-overlay">
             <p class="blogs-thumb-date">Posted: ${query.date}</p>
             <div class="thumb-center">
